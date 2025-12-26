@@ -21,7 +21,7 @@ export default function Home() {
       <header className="border-b border-zinc-900 py-8 bg-gradient-to-b from-zinc-950 to-black">
         <div className="max-w-7xl mx-auto px-4">
           <h1 className="text-5xl font-bold mb-2 bg-gradient-to-r from-white to-zinc-400 bg-clip-text text-transparent">NEXUS</h1>
-          <p className="text-zinc-400 text-lg">Interactive Character Gallery by Danyal Imran</p>
+          <p className="text-zinc-400 text-lg">Interactive Character Gallery by gandalfdougnut</p>
         </div>
       </header>
 
