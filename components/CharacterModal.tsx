@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 import { Character } from '@/data/characters';
 import { X } from 'lucide-react';
+import { useState } from 'react';
 
 interface CharacterModalProps {
   character: Character | null;
@@ -11,6 +12,8 @@ interface CharacterModalProps {
 }
 
 export default function CharacterModal({ character, onClose }: CharacterModalProps) {
+  const [imageLoaded, setImageLoaded] = useState(false);
+
   if (!character) return null;
 
   return (
@@ -27,7 +30,7 @@ export default function CharacterModal({ character, onClose }: CharacterModalPro
           animate={{ scale: 1, opacity: 1 }}
           exit={{ scale: 0.9, opacity: 0 }}
           onClick={(e) => e.stopPropagation()}
-          className="relative max-w-4xl w-full bg-zinc-900 rounded-lg overflow-hidden shadow-2xl border border-zinc-800"
+          className="relative max-w-4xl w-full bg-zinc-900 rounded-lg overflow-hidden"
         >
           <button
             onClick={onClose}
@@ -36,13 +39,24 @@ export default function CharacterModal({ character, onClose }: CharacterModalPro
             <X className="w-6 h-6 text-white" />
           </button>
 
-          <div className="relative aspect-[3/4] w-full max-h-[70vh]">
+          <div className="relative aspect-[3/4] w-full max-h-[70vh] bg-zinc-800">
+            {/* Loading spinner */}
+            {!imageLoaded && (
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="w-12 h-12 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
+              </div>
+            )}
+            
             <Image
               src={character.image}
               alt={character.title}
               fill
-              className="object-contain"
+              className={`object-contain transition-opacity duration-300 ${
+                imageLoaded ? 'opacity-100' : 'opacity-0'
+              }`}
               sizes="(max-width: 1200px) 100vw, 1200px"
+              onLoad={() => setImageLoaded(true)}
+              priority
             />
           </div>
 
