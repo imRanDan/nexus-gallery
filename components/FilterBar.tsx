@@ -6,7 +6,7 @@ interface FilterBarProps {
 }
 
 export default function FilterBar({ activeFilter, onFilterChange }: FilterBarProps) {
-  const filters = ['all', 'gaming', 'comics', 'other'];
+  const filters = ['all', 'gaming', 'comics', 'other', 'game-ui'];
 
   return (
     <div className="flex gap-4 justify-center mb-8 flex-wrap">

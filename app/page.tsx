@@ -16,6 +16,7 @@ export default function Home() {
     : characters.filter((char) => char.category === activeFilter);
 
   return (
+    <>
     <main className="min-h-screen bg-black text-white">
       {/* Header */}
       <header className="border-b border-zinc-900 py-8 bg-gradient-to-b from-zinc-950 to-black">
@@ -31,6 +32,13 @@ export default function Home() {
           activeFilter={activeFilter}
           onFilterChange={setActiveFilter}
         />
+          {activeFilter === 'game-ui' && (
+    <p className="mt-6 mb-10 text-zinc-400 text-sm">
+      Casual mobile game UI concept designed to demonstrate clarity, hierarchy,
+      monetization flow, gameplay HUD usability, and reward feedback. Created in Figma.
+    </p>
+  )}
+
         <CharacterGrid
           characters={filteredCharacters}
           onCharacterClick={setSelectedCharacter}
@@ -43,5 +51,11 @@ export default function Home() {
         onClose={() => setSelectedCharacter(null)}
       />
     </main>
+
+<footer className="border-t border-zinc-900 py-8 text-center text-zinc-500 text-sm">
+  <p>Created by <span className="text-white">gandalfdoughnut</span></p>
+</footer>
+
+</>
   );
 }

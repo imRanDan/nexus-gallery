@@ -1,7 +1,7 @@
 export type Character = {
   id: string;
   title: string;
-  category: 'gaming' | 'comics' | 'other';
+  category: 'gaming' | 'comics' | 'other' | 'game-ui';
   medium: string;
   date: string;
   image: string;
@@ -257,4 +257,41 @@ export const characters: Character[] = [
     date: 'December 2025',
     image: '/images/other/tommy_shelby.jpeg',
   },
+  {
+  id: '30',
+  title: 'Galaxy Rush – Main Menu',
+  category: 'game-ui',
+  medium: 'Figma (UI Design)',
+  date: 'December 2025',
+  image: '/images/game-ui/galaxy-rush/main_menu.png',
+  description: 'Clean casual mobile main menu focused on clarity and primary CTA hierarchy.'
+},
+{
+  id: '31',
+  title: 'Galaxy Rush – Shop UI',
+  category: 'game-ui',
+  medium: 'Figma (UI Design)',
+  date: 'December 2025',
+  image: '/images/game-ui/galaxy-rush/shop.png',
+  description: 'Simple monetization screen with readable pricing hierarchy.'
+},
+{
+  id: '32',
+  title: 'Galaxy Rush – HUD Overlay',
+  category: 'game-ui',
+  medium: 'Figma (UI Design)',
+  date: 'December 2025',
+  image: '/images/game-ui/galaxy-rush/hud.png',
+  description: 'Lightweight HUD that balances visibility and gameplay space.'
+},
+{
+  id: '33',
+  title: 'Galaxy Rush – Reward Popup',
+  category: 'game-ui',
+  medium: 'Figma (UI Design)',
+  date: 'December 2025',
+  image: '/images/game-ui/galaxy-rush/reward.png',
+  description: 'Celebration popup with strong reward visibility and clear CTA.'
+},
+
 ];
